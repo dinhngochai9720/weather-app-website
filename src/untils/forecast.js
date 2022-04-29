@@ -20,7 +20,7 @@ const forecast = (latitude, longitude, callback) => {
     else {
       callback(
         undefined,
-        `It is currently ${body.current.temperature}*C. It feels like ${body.current.feelslike}*C, Mieu ta thoi tiet hien tai: ${body.current.weather_descriptions[0]}`
+        `It is currently ${body.current.temperature}*C. It feels like ${body.current.feelslike}*C, Mieu ta thoi tiet hien tai: ${body.current.weather_descriptions[0]}. Do am la: ${body.current.humidity}%. Chi so tia UV la: ${body.current.uv_index} `
       );
     }
   });
