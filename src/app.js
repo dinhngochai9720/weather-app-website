@@ -17,6 +17,8 @@ console.log(path.join(__dirname, "../public"));
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 //Duong dan tro den file index.html
 const publicDirectoryPath = path.join(__dirname, "../public");
 
@@ -107,7 +109,7 @@ app.get("/weather", (req, res) => {
 
       forecast(latitude, longitude, (error, forecastData) => {
         if (error) {
-          return res.send({error });
+          return res.send({ error });
         }
 
         res.send({
@@ -154,6 +156,8 @@ app.get("*", (req, res) => {
 
 //nodemon :la de khoi dong lai may chu moi khi save
 //Chay may chu 3000
-app.listen(3000, () => {
-  console.log("May chu 3000 da duoc khoi dong lai - Server is up on port 3000");
+app.listen(port, () => {
+  console.log(
+    `May chu ${port} da duoc khoi dong lai - Server is up on port ${port}`
+  );
 });

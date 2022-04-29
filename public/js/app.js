@@ -22,7 +22,7 @@ weatherForm.addEventListener("submit", (event) => {
   messageTwo.textContent = "";
 
   const httpWeather = fetch(
-    `http://localhost:3000/weather?address=${location}`
+    `/weather?address=${location}`
   );
 
   httpWeather.then((response) => {
